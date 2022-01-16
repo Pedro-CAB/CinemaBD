@@ -191,16 +191,16 @@ insert into Bilhete values (28, 6.5, 21, 15);
 insert into Bilhete values (29, 6, 23, 06);
 insert into Bilhete values (30, 11, 27, 02);
 
-insert into Extras values (01, 01, 'pipocas', 0);
-insert into Extras values (02, 02, 'chocolates', 0);
-insert into Extras values (03, 03, 'nenhum', 1);
-insert into Extras values (04, 04, 'pipocas', 1);
-insert into Extras values (05, 05, 'nenhum', 0);
-insert into Extras values (06, 06, 'pipocas', 0);
-insert into Extras values (07, 07, 'chocolates', 0);
-insert into Extras values (08, 08, 'sumo', 0);
-insert into Extras values (09, 09, 'sumo', 1);
-insert into Extras values (10, 10, 'nenhum', 0);
+insert into Extras values (1,01, 01, 'pipocas', 0);
+insert into Extras values (2,02, 02, 'chocolates', 0);
+insert into Extras values (3,03, 03, 'nenhum', 1);
+insert into Extras values (4,04, 04, 'pipocas', 1);
+insert into Extras values (5,05, 05, 'nenhum', 0);
+insert into Extras values (6,06, 06, 'pipocas', 0);
+insert into Extras values (7,07, 07, 'chocolates', 0);
+insert into Extras values (8,08, 08, 'sumo', 0);
+insert into Extras values (9,09, 09, 'sumo', 1);
+insert into Extras values (10,10, 10, 'nenhum', 0);
 
 insert into Promocao values (01, 01, 'Cartão NOS');
 insert into Promocao values (02, 02, 'Estudante');

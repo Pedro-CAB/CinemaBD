@@ -92,7 +92,7 @@ comidaSolicitada varchar(50) not null,
 oculos3D integer not null
 );
 CREATE TABLE Promocao(
-idPromocao integer primary key
+idPromocao integer primary key,
 idPessoaC char(9) references PessoaCliente on update cascade on delete cascade,
 idBilhete integer references Bilhete on update cascade on delete cascade,
 nome varchar(30)

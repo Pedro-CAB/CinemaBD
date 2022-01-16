@@ -12,17 +12,17 @@ DROP TABLE IF EXISTS Bilhete;
 DROP TABLE IF EXISTS Extras;
 DROP TABLE IF EXISTS Promocao;
 CREATE TABLE PessoaFuncionario(
-idPessoaF integer primary key not null,
+idPessoaF integer primary key,
 nome varchar(30) not null,
 nif char(9) unique,
 morada varchar(100) not null,
 telefone char(9) unique,
-funcao varchar(20),
-salario integer check (salario>0),
+funcao varchar(20) not null,
+salario integer check (salario>0) not null,
 idHorario references Horario on update cascade
 );
 CREATE TABLE PessoaCliente(
-idPessoaC integer primary key not null,
+idPessoaC integer primary key,
 nome varchar(30) not null,
 nif char(9) unique,
 morada varchar(100) not null,
@@ -31,67 +31,69 @@ dataDeNascimento date not null,
 idade integer check (idade >= 14)
 );
 CREATE TABLE Horario(
-idHorario integer primary key not null,
-entradaH time,
-saidaH time
+idHorario integer primary key,
+entradaH time not null,
+saidaH time not null
 );
 CREATE TABLE Sala(
-idSala integer primary key not null,
+idSala integer primary key,
 numLugares integer check (numLugares>=30),
 tipoSala varchar(30),
 idPessoaF integer references PessoaFuncionario on update cascade
 );
 CREATE TABLE Sessao(
-idSessao integer primary key not null,
-inicioH time,
-data date,
+idSessao integer primary key,
+inicioH time not null,
+data date not null,
 sala integer references Sala on update cascade,
 idFilme integer references Filme on update cascade on delete cascade
 );
 CREATE TABLE Filme(
-idFilme integer primary key not null,
-titulo varchar(40) not null,
+idFilme integer primary key,
+titulo varchar(40) not null unique,
 sinopse varchar(500),
 genero varchar(20) not null,
-duracao integer,
+duracao integer not null,
 avaliacao integer check (avaliacao>0 and avaliacao<=5),
 classEtaria integer not null
 );
 CREATE TABLE Publicidade(
-idPublicidade integer primary key not null,
-tipo varchar(30),
-duracao float check (duracao <= 3.0)
+idPublicidade integer primary key,
+tipo varchar(30) not null,
+duracao float check (duracao <= 3.0) not null
 );
 CREATE TABLE SessaoPublicidade(
-idSessao integer references Sessao,
-idPublicidade integer references Publicidade
+idSessaoPublicidade integer primary key,
+idSessao integer references Sessao on update cascade on delete cascade,
+idPublicidade integer references Publicidade on update cascade on delete cascade
 );
 CREATE TABLE Patrocinador(
-idPatrocinador integer primary key not null,
+idPatrocinador integer primary key,
 nomeEmpresa varchar(30),
-refBancaria char(25)
+refBancaria char(25) not null
 );
 CREATE TABLE PublicidadePatrocinador(
-idPublicidade integer references Publicidade,
-idPatrocinador integer references Patrocinador,
-valorPago integer check (valorPago > 0)
+idPublicidadePatrocinador integer primary key,
+idPublicidade integer references Publicidade on update cascade on delete cascade,
+idPatrocinador integer references Patrocinador on update cascade on delete cascade,
+valorPago float check (valorPago > 0)
 );
 CREATE TABLE Bilhete(
-idBilhete integer primary key not null,
-preco float,
-numLugar integer,
+idBilhete integer primary key,
+preco float not null,
+numLugar integer not null,
 idSessao integer references Sessao on update cascade on delete cascade
 );
 CREATE TABLE Extras(
+idExtras integer primary key,
 idPessoaC char(9) references PessoaCliente on update cascade on delete cascade,
 idBilhete integer references Bilhete on update cascade on delete cascade,
-comidaSolicitada varchar(50),
-oculos3D integer,
-primary key(idPessoaC, idBilhete)
+comidaSolicitada varchar(50) not null,
+oculos3D integer not null
 );
 CREATE TABLE Promocao(
+idPromocao integer primary key
 idPessoaC char(9) references PessoaCliente on update cascade on delete cascade,
 idBilhete integer references Bilhete on update cascade on delete cascade,
-nome varchar(30),
-primary key(idBilhete)
+nome varchar(30)
 );

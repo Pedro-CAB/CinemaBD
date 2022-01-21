@@ -10,6 +10,6 @@ from PessoaCliente, Extras
 where Extras.idPessoaC == PessoaCliente.idPessoaC;
 
 /*
-Select sum(oculos3D), Sessao.data From Extras, Bilhete, Sessao Where (Select data From Sessao, Bilhete Where Bilhete.idSessao = Sessao.idSessao) and 
+Select sum(oculos3D) as numero_oculos_por_dia, Sessao.data From Extras, Bilhete, Sessao Where (Select data From Sessao, Bilhete Where Bilhete.idSessao = Sessao.idSessao) and 
 Extras.idBilhete = Bilhete.idBilhete and Bilhete.idSessao = Sessao.idSessao Group by Sessao.data;
 */

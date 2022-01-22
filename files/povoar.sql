@@ -213,8 +213,8 @@ insert into Bilhete values (50, 6.0, 14, 01);
 insert into Bilhete values (51, 6, 13, 01);
 insert into Bilhete values (52, 6, 25, 12);
 insert into Bilhete values (53, 11.5, 17, 21);
-insert into Bilhete values (54,10,10,20)
-insert into Bilhete values (55,10,13,22)
+insert into Bilhete values (54,10,10,20);
+insert into Bilhete values (55,10,13,22);
 insert into Bilhete values (56, 11.5, 26, 20);
 insert into Bilhete values (57, 7.5, 24, 01);
 insert into Bilhete values (58, 6.5, 25, 05);

@@ -31,7 +31,7 @@ from TAB4,Sessao
 WHERE TAB4.idSessao=Sessao.idSessao;
 
 CREATE VIEW LOTSESSAO AS 
-select TAB5.idSessao,TAB5.sala,Filme.titulo,TAB5.numLugares,TAB5.occupiedPlaces,TAB5.vagas 
+select TAB5.sala,Filme.titulo,TAB5.numLugares,TAB5.occupiedPlaces,TAB5.vagas 
 from TAB5,Filme 
 WHERE TAB5.idFilme=Filme.idFilme;
 

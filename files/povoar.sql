@@ -151,14 +151,14 @@ insert into Patrocinador values (06, 'Pandora', '3456902783401631465081826');
 insert into Patrocinador values (07, 'Huawei', '678245110772458236703378954');
 insert into Patrocinador values (08, 'Lancôme', '5633889255671230573984672');
 
-insert into PublicidadePatrocinador values (01, 01, 01, 650);
-insert into PublicidadePatrocinador values (02, 02, 02, 500);
-insert into PublicidadePatrocinador values (03, 02, 03, 700);
-insert into PublicidadePatrocinador values (04, 03, 04, 800);
-insert into PublicidadePatrocinador values (05, 04, 05, 500);
-insert into PublicidadePatrocinador values (06, 06, 06, 600);
-insert into PublicidadePatrocinador values (07, 07, 07, 640);
-insert into PublicidadePatrocinador values (08, 05, 08, 700);
+insert into PublicidadePatrocinador values (01, 01, 01, 30);
+insert into PublicidadePatrocinador values (02, 02, 02, 50);
+insert into PublicidadePatrocinador values (03, 02, 03, 45);
+insert into PublicidadePatrocinador values (04, 03, 04, 25);
+insert into PublicidadePatrocinador values (05, 04, 05, 40);
+insert into PublicidadePatrocinador values (06, 06, 06, 50);
+insert into PublicidadePatrocinador values (07, 07, 07, 40);
+insert into PublicidadePatrocinador values (08, 05, 08, 30);
 
 insert into Bilhete values (01, 11.00, 02, 01);
 insert into Bilhete values (02, 11.00, 08, 02);

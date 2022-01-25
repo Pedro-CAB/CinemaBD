@@ -21,3 +21,5 @@ CREATE VIEW TAB4 AS
 select TAB3.nome,TAB3.funcao,(18 - TAB3.horaEntrada) as horasTrabalhadas
 from TAB3
 ORDER BY TAB3.nome ASC;
+
+select * from TAB4;

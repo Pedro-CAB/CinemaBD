@@ -51,3 +51,5 @@ CREATE VIEW calculateGain AS
 select TAB9.idSessao,TAB9.LucroDosBilhetes,TAB9.custoFuncionario,(TAB9.LucroDosBilhetes-TAB9.custoFuncionario) as LucroSessao
 FROM TAB9
 ORDER BY LucroSessao ASC;
+
+select * from calculateGain;

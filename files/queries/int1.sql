@@ -9,7 +9,7 @@ from PessoaCliente
 where idade < 23 ;
 
 create view ExtrasDeEstudantes as 
-select idPessoaC, nome, Extras.comidaSolicitada as comidaSolicitada
+select Estudantes.idPessoaC, nome, Extras.comidaSolicitada as comidaSolicitada
 from Estudantes,Extras 
 where Estudantes.idPessoaC = Extras.idPessoaC;
 

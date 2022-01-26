@@ -9,5 +9,5 @@ when exists(select * from Bilhete where idSessao = New.idSessao and numLugar = N
 begin
 update Bilhete
 set numLugar = new.numLugar + 1 
-where numLugar = new.numLugar;
+where idBilhete = new.idBilhete and numLugar = new.numLugar;
 end;

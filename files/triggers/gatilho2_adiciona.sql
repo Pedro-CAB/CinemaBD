@@ -8,6 +8,6 @@ after insert on Horario
 when (new.saidaH-new.entradaH) <> '08:00:00'
 begin
 update Horario 
-set saidaH = new.entradaH + '08:00:00' 
-where saidaH = new.saidaH;
+set saidaH = time(new.entradaH + '08:00:00') 
+where saidaH = time(new.saidaH);
 end;

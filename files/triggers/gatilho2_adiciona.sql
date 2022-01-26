@@ -6,5 +6,5 @@ create trigger checkIdCliente
 before insert on PessoaCliente
 when exists ( select * from PessoaCliente where PessoaCliente.idPessoaC = new.idPessoaC)
 begin
-insert into PessoaCliente values(PessoaCliente.idPessoaC+1, new.nome, new.nif, new.morada , new.telefone, new.dataDeNascimento, new.idade);
+insert into PessoaCliente values(new.idPessoaC+1, new.nome, new.nif, new.morada , new.telefone, new.dataDeNascimento, new.idade);
 end;
